@@ -19,6 +19,8 @@ In this project, we would be predicting healthcare in various districts of India
 A web application with access to both parents and Doctor are proposed with necessary privileges. Reminders on timely vaccination are also proposed to parents regularly till the vaccination coverage of child is complete. Capturing and storing medical records in a common database can skip the need of carrying paperwork and can help in providing efficient and qualitative treatment to child. Applying analytics on the data can help in research findings in future.
 
 # Installation Instructions
+## Using Docker
+
 1. Build the docker image
 ```bash
 cd /path/to/this/folder
@@ -28,4 +30,25 @@ docker build -t immunization .
 ```bash
 docker run -it --rm --name immunization -p 8000:8000 immunization:latest
 ```
-> NOTE: might not work in Powershell, try it using cmd instead
+> NOTE: On windows, it might not work in Powershell, try it using cmd instead
+
+---
+## Using local python3
+
+You can also run it locally, but might need to install additional system dependencies `build-deps gcc python3-dev musl-dev libxlt-dev postgresql-dev` - which may or may not exist on Windows.
+
+1. This step is only required to be run once
+```bash
+pip3 install -r req.txt
+```
+2. Run the server
+```bash
+python3 manage.py runserver 0.0.0.0:8000
+```
+3. Use the following to check all available Django based sub-commands
+```bash
+python3 manage.py
+```
+> NOTE: Depending upon your python installation, you might need to replace `python3` with `python` and `pip3` with `pip`.
+
+---
