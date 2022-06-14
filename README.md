@@ -17,3 +17,15 @@ The idea of this project is to store and retrieve the child medical records with
 In this project, we would be predicting healthcare in various districts of India using past years records, Web scrapping of disease outbreak, diseases spread data from various websites, Associating the scrapped data with healthcare prediction to predict increase in immunization, decrement in number of people infected from diseases in all parts of India, Plotting Heat maps and data visualization of predicted data.
 
 A web application with access to both parents and Doctor are proposed with necessary privileges. Reminders on timely vaccination are also proposed to parents regularly till the vaccination coverage of child is complete. Capturing and storing medical records in a common database can skip the need of carrying paperwork and can help in providing efficient and qualitative treatment to child. Applying analytics on the data can help in research findings in future.
+
+# Installation Instructions
+1. Build the docker image
+```bash
+cd /path/to/this/folder
+docker build -t immunization .
+```
+2. Run the image
+```bash
+docker run -it --rm --name immunization -p 8000:8000 immunization:latest
+```
+> NOTE: might not work in Powershell, try it using cmd instead
