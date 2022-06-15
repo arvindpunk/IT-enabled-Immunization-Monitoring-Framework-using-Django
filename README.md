@@ -28,7 +28,7 @@ docker build -t immunization .
 ```
 2. Run the image
 ```bash
-docker run -it --rm --name immunization -p 8000:8000 immunization:latest
+docker run -it --rm --name immunization -p 8000:8000 immunization:latest --mount type=bind,source=./target,target=/usr/arc/app
 ```
 > NOTE: On windows, it might not work in Powershell, try it using cmd instead
 
