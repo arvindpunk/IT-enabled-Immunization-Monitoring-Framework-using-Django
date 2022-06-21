@@ -26,9 +26,9 @@ A web application with access to both parents and Doctor are proposed with neces
 cd /path/to/this/folder
 docker build -t immunization .
 ```
-2. Run the image
+2. Run the image (Windows)
 ```bash
-docker run -it --rm --name immunization -p 8000:8000 --mount type=bind,source=./target,target=/usr/arc/app immunization:latest 
+docker run -it --rm --name immunization -p 8000:8000 --mount type=bind,source=%cd%,target=/usr/arc/app immunization:latest 
 ```
 > NOTE: On windows, it might not work in Powershell, try it using cmd instead
 
